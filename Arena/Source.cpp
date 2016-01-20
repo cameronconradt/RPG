@@ -4,7 +4,7 @@
 #include <fstream>
 #include <set>
 #include <iomanip>
-/*#include "FighterInterface.h"
+#include "FighterInterface.h"
 #include "Factory.h"
 #include "ArenaInterface.h"
 #include "Arena.h"
@@ -12,15 +12,15 @@
 #include "Cleric.h"
 #include "Robot.h"
 #include "Archer.h"
-*/
+
 using namespace std;
 
-void addFighter(set<string> Fighters, string input);
+void addFighter(set<Fighter> Fighters, string input);
 bool correct(string input);
 
 int main()
 {
-	set<string> Fighters;
+	set<Fighter> Fighters;
 	string input;
 	while (getline(cin, input))
 	{
@@ -30,11 +30,11 @@ int main()
 
 }
 //Adds Fighter to the vector
-void addFighter(set<string> Fighters, string input)
+void addFighter(set<Fighter> Fighters, string input)
 {
 	stringstream ss;
 	string name;
-	char type;
+	string type;
 	int hitpoints;
 	int strength;
 	int speed;
@@ -48,6 +48,12 @@ void addFighter(set<string> Fighters, string input)
 		ss >> strength;
 		ss >> speed;
 		ss >> magic;
+		if (type == "C")
+		{
+			Cleric* c = new Cleric(name, type, hitpoints, strength, speed, magic);
+			Fighters.insert(c);
+
+		}
 	}
 
 }
