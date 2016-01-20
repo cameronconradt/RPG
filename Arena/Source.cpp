@@ -50,8 +50,8 @@ void addFighter(set<Fighter> Fighters, string input)
 		ss >> magic;
 		if (type == "C")
 		{
-			Cleric* c = new Cleric(name, type, hitpoints, strength, speed, magic);
-			Fighters.insert(c);
+			Cleric* c = new Cleric(name, hitpoints, strength, speed, magic);
+			Fighters.add(c);
 
 		}
 	}

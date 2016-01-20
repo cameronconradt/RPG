@@ -1,8 +1,9 @@
 #include "Cleric.h"
 
 
-Cleric::Cleric()
+Cleric::Cleric(string name, int hitpoints, int strength, int speed, int magic)
 {
+
 }
 
 
