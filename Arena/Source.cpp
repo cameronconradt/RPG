@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void addFighter(set<Fighter*> Fighters, string input);
+void addFighter(set<Fighter*>& Fighters, string input);
 bool correct(string input);
 
 int main()
@@ -30,7 +30,7 @@ int main()
 
 }
 //Adds Fighter to the vector
-void addFighter(set<Fighter*> Fighters, string input)
+void addFighter(set<Fighter*>& Fighters, string input)
 {
 	stringstream ss;
 	string name;
@@ -78,7 +78,7 @@ bool correct(string input)
 {
 	stringstream ss;
 	string name;
-	char type;
+	string type;
 	int hitpoints;
 	int strength;
 	int speed;
@@ -86,12 +86,31 @@ bool correct(string input)
 	ss << input;
 	ss >> name;
 	ss >> type;
-	if (type != ("C" || "R" || "A"))
+	if (type == "C")
+	{
+		ss >> hitpoints;
+		ss >> strength;
+		ss >> speed;
+		ss >> magic;
+	}
+	else if (type == "R")
+	{
+		ss >> hitpoints;
+		ss >> strength;
+		ss >> speed;
+		ss >> magic;
+	}
+	else if (type == "A")
+	{
+		ss >> hitpoints;
+		ss >> strength;
+		ss >> speed;
+		ss >> magic;
+	}
+	else
+	{
 		return false;
-	ss >> hitpoints;
-	ss >> strength;
-	ss >> speed;
-	ss >> magic;
+	}
 	if ((hitpoints || strength || speed || magic) < 0)
 		return false;
 	return true;
