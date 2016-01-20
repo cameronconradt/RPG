@@ -1,8 +1,14 @@
 #include "Fighter.h"
 
 
-Fighter::Fighter()
+Fighter::Fighter(string n, int h, int st, int sp, int m)
 {
+	name = n;
+	max_hitpoints = h;
+	hitpoints = h;
+	strength = st;
+	speed = sp;
+	magic = m;
 }
 
 string Fighter::getName()

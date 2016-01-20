@@ -4,7 +4,7 @@ class Fighter :
 	public FighterInterface
 {
 public:
-	Fighter();
+	Fighter(string n, int h, int st, int sp, int m);
 	~Fighter();
 	string getName();
 	int getMaximumHP();

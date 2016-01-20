@@ -4,7 +4,7 @@ class Robot :
 	public Fighter
 {
 public:
-	Robot();
+	Robot(string n, int h, int st, int sp, int m);
 	~Robot();
 };
 

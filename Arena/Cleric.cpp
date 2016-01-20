@@ -1,9 +1,10 @@
 #include "Cleric.h"
 
 
-Cleric::Cleric(string name, int hitpoints, int strength, int speed, int magic)
+Cleric::Cleric(string n, int h, int st, int sp, int m) : Fighter(n, h, st, sp, m)
 {
-
+	mana = 5 * magic;
+	maxmana = mana;
 }
 
 

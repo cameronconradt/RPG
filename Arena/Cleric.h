@@ -4,7 +4,7 @@ class Cleric :
 	public Fighter
 {
 public:
-	Cleric(string name, int hitpoints, int strength, int speed, int magic);
+	Cleric(string n, int h, int st, int sp, int m);
 	~Cleric();
 	int getDamage();
 	void takeDamage(int damage);
@@ -14,5 +14,6 @@ public:
 
 protected:
 	int mana;
+	int maxmana;
 };
 

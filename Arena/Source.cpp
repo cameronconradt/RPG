@@ -15,12 +15,12 @@
 
 using namespace std;
 
-void addFighter(set<Fighter> Fighters, string input);
+void addFighter(set<Fighter*> Fighters, string input);
 bool correct(string input);
 
 int main()
 {
-	set<Fighter> Fighters;
+	set<Fighter*> Fighters;
 	string input;
 	while (getline(cin, input))
 	{
@@ -30,7 +30,7 @@ int main()
 
 }
 //Adds Fighter to the vector
-void addFighter(set<Fighter> Fighters, string input)
+void addFighter(set<Fighter*> Fighters, string input)
 {
 	stringstream ss;
 	string name;
@@ -41,6 +41,8 @@ void addFighter(set<Fighter> Fighters, string input)
 	int magic;
 	if (correct(input))
 	{
+		int size;
+		size = Fighters.size();
 		ss << input;
 		ss >> name;
 		ss >> type;
@@ -51,8 +53,22 @@ void addFighter(set<Fighter> Fighters, string input)
 		if (type == "C")
 		{
 			Cleric* c = new Cleric(name, hitpoints, strength, speed, magic);
-			Fighters.add(c);
-
+			Fighters.insert(c);
+		}
+/*		else if (type == "R")
+		{
+			Robot* r = new Robot(name, hitpoints, strength, speed, magic);
+			Fighters.insert(r);
+		}
+		else
+		{
+			Archer* a = new Archer(name, hitpoints, strength, speed, magic);
+			Fighters.insert(a);
+		}
+		*/
+		if (size == Fighters.size())
+		{
+			cout << "Error";
 		}
 	}
 
