@@ -6,5 +6,13 @@ class GPA :
 public:
 	GPA();
 	~GPA();
+	map<unsigned long long int, StudentInterface*> getMap();
+	set<StudentInterface*, Comparator> getSet();
+	bool importStudents(string mapFileName, string setFileName);
+	bool importGrades(string fileName);
+	string querySet(string fileName);
+	string queryMap(string fileName);
+	void clear();
+
 };
 

@@ -6,5 +6,11 @@ class Student :
 public:
 	Student();
 	~Student();
+	unsigned long long int getID();
+	string getName();
+	string getGPA();
+	void addGPA(double classGrade);
+	string toString();
+
 };
 
