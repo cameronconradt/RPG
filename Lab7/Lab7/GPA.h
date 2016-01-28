@@ -1,4 +1,6 @@
 #pragma once
+#include <fstream>
+#include <iostream>
 #include "C:\Users\camer_000\Documents\Visual Studio 2013\lab7\Student_Code\GPAInterface.h"
 class GPA :
 	public GPAInterface
@@ -14,5 +16,8 @@ public:
 	string queryMap(string fileName);
 	void clear();
 
+protected:
+	map<unsigned long long int, StudentInterface*> map;
+	set<StudentInterface*, Comparator> set;
 };
 
